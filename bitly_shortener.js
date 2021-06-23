@@ -19,6 +19,7 @@ easier
 */
 
 const shortenLink = async () => {
+  output.style.opacity = 0;
   try {
     const response = await fetch(endpoint, {
       method: "POST",
@@ -42,7 +43,6 @@ const shortenLink = async () => {
   }
   submitForm.reset();
   
-  output.style.opacity = 0;
   output.style.opacity = 1;
   
 }
