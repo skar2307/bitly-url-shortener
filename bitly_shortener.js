@@ -17,9 +17,20 @@ const output = document.getElementById('output');
 endpoint, user input field and submit form declared here to make dealing with them in the program
 easier
 */
+function generateOutput(text) {
+  output.innerHTML = `<p class = 'fade class'></p>`;
+  const element = document.createElement("p");
+  element.innerHTML = `<a href=${text}>${text}</a>`;
+  element.classList.add("fade-anim");
+  output.appendChild(element);
+}
+/*
+The function responsible for generating the output. It has to create a new <p> every time or else
+the "fade-anim" animation only triggers the first time user adds a link. Creates the <p> within
+the #output div and then applies the fade animation class to it in order to trigger it every time. 
+*/
 
 const shortenLink = async () => {
-  output.style.opacity = 0;
   try {
     const response = await fetch(endpoint, {
       method: "POST",
@@ -30,11 +41,13 @@ const shortenLink = async () => {
       body: JSON.stringify({
           'long_url': userInput.value
       })
+
     });
     if (response.ok) {
       const jsonResponse = await response.json();
-      output.innerHTML = `Your shortened link is <a href=${jsonResponse.link}>${jsonResponse.link}</a>`;
+      generateOutput(jsonResponse.link);
       localStorage.setItem(userInput.value, JSON.stringify([jsonResponse.link, new Date().toISOString().slice(0, 10)]));
+    
     }
   }
   catch(error){
@@ -42,9 +55,6 @@ const shortenLink = async () => {
     output.innerHTML = "An error has occurred. Please try again later."
   }
   submitForm.reset();
-  
-  output.style.opacity = 1;
-  
 }
 /* 
 Fairly standard async/await HTTP request. A POST request is made to the endpoint, passing in the long
@@ -55,9 +65,9 @@ Since it uses a try statement, it is also able to catch errors. The website disp
 but the actual error message is displayed in the browser's console. The input field is then reset.
 */
 
-submitForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    shortenLink();
+submitForm.addEventListener("submit", (event) => {  
+  event.preventDefault();
+  shortenLink();
 });
 /* 
 Using an onClick HTML button listener was causing problems since the script has to be declared after 
