@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="contact_me.css">
+        
+        <!--Custom fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="favicon.ico" rel="icon">
+        
+        <title>Contact Me</title>
+    </head>
+    <body> 
+        <nav>
+            <a href="index.html">URL Shortener</a>
+            <a href="track_links.html">Track Links</a>
+            <a href="">GitHub Page</a>
+        </nav>
+        <section>
+            <form id="emailSender">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" required>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="body">Body:</label>
+                <textarea id="body" name="body" cols="40" rows="7" required></textarea>
+                <input type="submit" id="submitter" name="submitter">
+            </form>
+        </section>
+        
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <!--This script allows implementation of SMTPJS library in email_submitter.js-->
+        
+        <script src="email_submitter.js"></script>
+    </body>
+</html>

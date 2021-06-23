@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #def2f1;
+}
+
+a:hover {
+    color: #17252A;
+}
+
+#submitter { 
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    font-family: 'Abel', sans-serif;
+}
+
+body {
+    background-color: #2b7a78;
+}
+
+#inputLabel {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1, #inputLabel {
+    color: #FEFFFF;
+}
+
+button {
+    background-color: #def2f1;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 1.25rem;
+    padding: 0.625rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#inputUrl {
+    width: 25vw;
+    transition: width 0.4s ease-in-out;
+    border-radius: 0.25rem;
+}
+
+#inputUrl:focus {
+    width: 50vw;
+    border-radius: 0.25rem;
+}
+
+#output {
+    font-size: 1.5625rem;
+    font-family: 'Abel', sans-serif;
+    transition-property: opacity;
+    transition-duration: 3s;
+    opacity: 0;
+}
+
+#output:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+      font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    html {
+      font-size: 24px;
+    }
+}

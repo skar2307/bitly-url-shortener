@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="home_screen.css">
+        
+        <!--Custom fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        
+        <link href="favicon.ico" rel="icon">
+        <title>URL Shortener</title>
+    </head>
+    <body> 
+        <nav>
+            <a href="track_links.html">Track Links</a>
+            <a href="contact_me.html">Contact Me</a>
+            <a href="">GitHub Page</a>
+        </nav>
+        <section>
+            <header>
+                <h1>Enter a valid HTTP address below to shorten your ugly, long URL.</h1>
+            </header> 
+            <form id="submitter">
+                <input type="url" id="inputUrl" value="" required>
+                <br>
+                <button>Submit</button>
+            </form>
+            
+            <p id="output"></p>
+            <!--Content of paragraph will be filled out by JS, hence why it is empty.-->
+        </section>
+        <script src='bitly_shortener.js'></script>
+    </body>
+</html>
