@@ -20,7 +20,7 @@ easier
 function generateOutput(text) {
   output.innerHTML = `<p class = 'fade class'></p>`;
   const element = document.createElement("p");
-  element.innerHTML = `<a href=${text}>${text}</a>`;
+  element.innerHTML = `Your shortened URL is: <a href=${text}>${text}</a>`;
   element.classList.add("fade-anim");
   output.appendChild(element);
 }
