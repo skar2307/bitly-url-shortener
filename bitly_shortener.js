@@ -41,6 +41,9 @@ const shortenLink = async () => {
     output.innerHTML = "An error has occurred. Please try again later."
   }
   submitForm.reset();
+  if (output.style.opacity = 1) {
+    output.style.opacity = 0;
+  }
   output.style.opacity = 1;
 }
 /* 
